@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transformation Partners, LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #F4F1EC; color: #1A2A3A; font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.7; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5vw; background: rgba(13,27,42,0.97); backdrop-filter: blur(8px); }
+    .nav-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+    .nav-wordmark { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.1em; color: #FFFFFF; line-height: 1.15; white-space: nowrap; }
+    .nav-wordmark span { display: block; color: #C9A84C; font-size: 0.6rem; letter-spacing: 0.18em; font-family: 'DM Sans', sans-serif; font-weight: 500; text-transform: lowercase; }
+    .nav-cta { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A84C; text-decoration: none; border: 1.5px solid #C9A84C; padding: 0.42rem 1.1rem; transition: all 0.2s ease; white-space: nowrap; }
+    .nav-cta:hover { background: #C9A84C; color: #0D1B2A; }
+
+    #hero { min-height: 100vh; background: #0D1B2A; display: flex; align-items: center; padding: 7rem 5vw 5rem; position: relative; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; top: -10%; right: -5%; width: 55vw; height: 110%; background: linear-gradient(135deg, transparent 40%, rgba(201,168,76,0.07) 100%); pointer-events: none; }
+    .hero-inner { max-width: 820px; position: relative; z-index: 2; }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: #C9A84C; margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.8rem; }
+    .hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 2px; background: #C9A84C; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 8.5vw, 7rem); line-height: 0.93; letter-spacing: 0.02em; color: #FFFFFF; margin-bottom: 2rem; }
+    h1 em { font-style: normal; color: #C9A84C; }
+    .hero-sub { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: clamp(1rem, 1.6vw, 1.2rem); color: rgba(244,241,236,0.92); max-width: 540px; margin-bottom: 2.8rem; line-height: 1.9; }
+    .hero-rule { width: 52px; height: 2px; background: #C9A84C; margin-bottom: 2.8rem; }
+    .btn-primary { display: inline-block; background: #C9A84C; color: #0D1B2A; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2.4rem; transition: background 0.2s ease, transform 0.15s ease; }
+    .btn-primary:hover { background: #E8C97A; transform: translateY(-2px); }
+
+    section { padding: 6rem 5vw; }
+    .section-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.38em; text-transform: uppercase; color: #C9A84C; margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.7rem; }
+    .section-label::before { content: ''; display: inline-block; width: 24px; height: 2px; background: #C9A84C; }
+    h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.3rem, 4.5vw, 3.8rem); line-height: 0.97; letter-spacing: 0.03em; color: #0D1B2A; margin-bottom: 1.4rem; }
+    .section-intro { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 1.02rem; color: #3A5060; max-width: 620px; margin-bottom: 3rem; line-height: 1.9; }
+
+    #about { background: #FFFFFF; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: start; max-width: 1080px; }
+    .about-text p { color: #3A5060; margin-bottom: 1.1rem; font-size: 0.97rem; }
+    .about-text strong { color: #0D1B2A; }
+    .stat-col { display: flex; flex-direction: column; gap: 2.2rem; }
+    .stat-item { padding-left: 1.3rem; border-left: 3px solid #C9A84C; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.7rem; line-height: 1; color: #0D1B2A; }
+    .stat-label { font-size: 0.8rem; color: #4A5E6E; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 0.2rem; }
+
+    #problem { background: #0D1B2A; position: relative; overflow: hidden; }
+    #problem h2 { color: #FFFFFF; }
+    #problem .section-label { color: #C9A84C; }
+    #problem .section-label::before { background: #C9A84C; }
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; max-width: 1080px; margin-top: 3rem; position: relative; z-index: 1; }
+    .problem-card { border: 1px solid rgba(201,168,76,0.22); padding: 1.8rem; background: rgba(255,255,255,0.03); transition: border-color 0.2s ease; }
+    .problem-card:hover { border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.05); }
+    .p-bar { width: 36px; height: 3px; background: #C9A84C; margin-bottom: 1.1rem; }
+    .problem-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.28rem; letter-spacing: 0.05em; color: #FFFFFF; margin-bottom: 0.5rem; }
+    .problem-card p { font-size: 0.92rem; color: #9BAFC0; line-height: 1.75; }
+    .problem-card.featured { border-color: rgba(201,168,76,0.45); background: rgba(201,168,76,0.06); }
+    .problem-card.featured h3 { color: #E8C97A; }
+    .problem-kicker { margin-top: 3rem; font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 1.1rem; color: rgba(244,241,236,0.75); max-width: 580px; line-height: 1.9; position: relative; z-index: 1; }
+
+    #method { background: #F4F1EC; }
+    .method-list { max-width: 800px; }
+    .method-item { display: grid; grid-template-columns: 3.2rem 1fr; gap: 1.6rem; padding: 2.2rem 0; border-bottom: 1px solid rgba(13,27,42,0.1); align-items: start; }
+    .method-item:last-child { border-bottom: none; }
+    .method-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; line-height: 1; color: #C9A84C; padding-top: 0.15rem; }
+    .method-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: 0.04em; color: #0D1B2A; margin-bottom: 0.4rem; }
+    .method-desc { color: #3A5060; font-size: 0.95rem; }
+
+    #industries { background: #FFFFFF; }
+    .industry-tags { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2.5rem; }
+    .tag { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #0D1B2A; border: 1.5px solid #0D1B2A; padding: 0.42rem 1rem; transition: all 0.18s ease; }
+    .tag:hover { background: #0D1B2A; color: #C9A84C; }
+
+    #contact { background: #0D1B2A; text-align: center; padding: 7rem 5vw; position: relative; overflow: hidden; }
+    #contact::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 65%); pointer-events: none; }
+    #contact h2 { color: #FFFFFF; max-width: 680px; margin: 0 auto 1.2rem; }
+    #contact .section-label { color: #C9A84C; justify-content: center; }
+    #contact .section-label::before { background: #C9A84C; }
+    #contact p { color: rgba(244,241,236,0.82); max-width: 480px; margin: 0 auto 2.8rem; font-style: italic; font-family: 'Libre Baskerville', serif; }
+
+    footer { background: #070F18; color: rgba(255,255,255,0.28); font-size: 0.78rem; text-align: center; padding: 1.6rem 5vw; letter-spacing: 0.1em; }
+
+    @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    @media (max-width: 600px) {
+      nav { padding: 0.85rem 4vw; }
+      .nav-wordmark { font-size: 0.78rem; }
+      #hero { padding: 6rem 6vw 4rem; }
+      h1 { font-size: 3rem; }
+      .hero-sub { font-size: 1rem; color: rgba(244,241,236,0.95); }
+      section { padding: 4rem 6vw; }
+      h2 { font-size: 2.1rem; color: #0D1B2A; }
+      .about-text p { font-size: 1rem; color: #3A5060; }
+      .about-text strong { color: #0D1B2A; }
+      .stat-num { color: #0D1B2A; }
+      .stat-label { color: #4A5E6E; }
+      .section-intro { font-size: 1rem; color: #3A5060; }
+      .problem-card p { color: #9BAFC0; }
+      .method-desc { color: #3A5060; }
+      .method-title { color: #0D1B2A; }
+      .problem-kicker { color: rgba(244,241,236,0.88); }
+      #contact p { color: rgba(244,241,236,0.9); }
+    }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <svg viewBox="0 0 44 46" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:46px;height:46px;flex-shrink:0;">
+        <rect x="8"  y="5"  width="3"   height="15" rx="1.4" fill="#C9A84C" transform="rotate(-10 9.5 17)"/>
+        <rect x="13" y="3"  width="3"   height="17" rx="1.4" fill="#D4A832" transform="rotate(-5 14.5 17)"/>
+        <rect x="17" y="1"  width="3.2" height="18" rx="1.4" fill="#E0B840" transform="rotate(-2 18.6 17)"/>
+        <rect x="20.5" y="0" width="3.2" height="20" rx="1.4" fill="#EDD07A"/>
+        <rect x="24" y="1"  width="3.2" height="18" rx="1.4" fill="#E0B840" transform="rotate(2 25.6 17)"/>
+        <rect x="28" y="3"  width="3"   height="17" rx="1.4" fill="#D4A832" transform="rotate(5 29.5 17)"/>
+        <rect x="33" y="5"  width="3"   height="15" rx="1.4" fill="#C9A84C" transform="rotate(10 34.5 17)"/>
+        <circle cx="19"   cy="3"  r="0.7" fill="rgba(255,255,255,0.42)"/>
+        <circle cx="22.1" cy="2"  r="0.8" fill="rgba(255,255,255,0.52)"/>
+        <circle cx="25.5" cy="3"  r="0.7" fill="rgba(255,255,255,0.42)"/>
+        <path d="M9 42 L7 17 L37 17 L35 42 Z" fill="#C9A84C"/>
+        <rect x="7" y="14" width="30" height="4" rx="1" fill="#B8922A"/>
+        <line x1="13" y1="21" x2="31" y2="38" stroke="#0D1B2A" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="31" y1="21" x2="13" y2="38" stroke="#0D1B2A" stroke-width="2.8" stroke-linecap="round"/>
+        <path d="M9 42 L7 17 L11 17 L13 42 Z" fill="rgba(0,0,0,0.1)"/>
+      </svg>
+      <div class="nav-wordmark">
+        Transformation Partners LLC
+        <span>xformationpartners.com</span>
+      </div>
+    </a>
+    <a href="mailto:kevin.mccoy@xformationpartners.com" class="nav-cta">Let's Talk</a>
+  </nav>
+
+
+  <section id="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Enterprise Transformation · Since 2004</p>
+      <h1>Strategy Is<br/>Easy.<br/><em>Execution</em><br/>Is the Job.</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">Most consultants optimize for the stopwatch. We optimize for the outcome.</p>
+      <a href="mailto:kevin.mccoy@xformationpartners.com" class="btn-primary">Start the Conversation</a>
+    </div>
+  </section>
+
+
+  <section id="about">
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p class="section-label">Who We Are</p>
+        <h2>Two Decades.<br/>No Shortcuts.</h2>
+        <p>Transformation Partners was built on one premise: <strong>real change requires someone who won't be talked out of it.</strong></p>
+        <p>Since 2004, we've worked inside organizations that others couldn't move — call centers running thousands of agents across multiple states, amusement park operations at scale, enterprise IT overhauls. We've delivered results in every one of them.</p>
+        <p>We've seen every phase of the agile lifecycle. We know where transformations stall and exactly why. And we don't leave until the system works.</p>
+        <p>We're not here to produce a deck. We're here to fix the system.</p>
+      </div>
+      <div class="stat-col">
+        <div class="stat-item">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Years of Agile Transformation</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6,000+</div>
+          <div class="stat-label">Agent Call Center Overhaul · 3 States</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Multi-Industry</div>
+          <div class="stat-label">Utilities · Hospitality · Enterprise IT · Ops</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="problem">
+    <p class="section-label">The Real Problem</p>
+    <h2>Transformations Don't<br/>Fail. Organizations Do.</h2>
+    <div class="problem-grid fade-in">
+      <div class="problem-card">
+        <div class="p-bar"></div>
+        <h3>Roadmaps vs. Reality</h3>
+        <p>Plans built on aspiration, not actual team capacity or organizational constraints.</p>
+      </div>
+      <div class="problem-card">
+        <div class="p-bar"></div>
+        <h3>Misaligned Priorities</h3>
+        <p>Business and technology pulling in opposite directions with no one accountable for the gap.</p>
+      </div>
+      <div class="problem-card">
+        <div class="p-bar"></div>
+        <h3>Execution Breakdown</h3>
+        <p>Work stalls between strategy, product, and delivery. Nobody owns the space between.</p>
+      </div>
+      <div class="problem-card">
+        <div class="p-bar"></div>
+        <h3>Governance That Slows</h3>
+        <p>Approval chains built to protect the process instead of enable the work.</p>
+      </div>
+      <div class="problem-card featured">
+        <div class="p-bar"></div>
+        <h3>The Efficiency Trap</h3>
+        <p>Speeding up the line only works if the fries are cooked through. Optimized systems fail when they ignore the cook time required for real human alignment. Fast delivery of the wrong thing is still the wrong thing.</p>
+      </div>
+      <div class="problem-card">
+        <div class="p-bar"></div>
+        <h3>Vendor Silos</h3>
+        <p>Internal teams and external partners operating from different playbooks, duplicating work and compounding friction.</p>
+      </div>
+    </div>
+    <p class="problem-kicker fade-in">High investment. Low return. Real change never quite arrives. We've seen this pattern across every industry we've worked in — and we know exactly how to break it.</p>
+  </section>
+
+
+  <section id="method">
+    <p class="section-label">How We Work</p>
+    <h2>Built to Deliver.<br/>Not to Recommend.</h2>
+    <p class="section-intro">Every engagement is grounded in outcomes, not activity. We don't leave until the system works.</p>
+    <div class="method-list fade-in">
+      <div class="method-item">
+        <div class="method-num">01</div>
+        <div>
+          <div class="method-title">Outcome-Driven Alignment</div>
+          <p class="method-desc">We define success in measurable terms upfront — financial impact, operational efficiency, time-to-value — and every decision ties back to those numbers.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-num">02</div>
+        <div>
+          <div class="method-title">Capacity-Aware Roadmapping</div>
+          <p class="method-desc">We build roadmaps against real throughput and real constraints. No aspirational timelines. No plans that only exist in a slide deck.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-num">03</div>
+        <div>
+          <div class="method-title">Vertical Integration of Work</div>
+          <p class="method-desc">Strategy to Product to Execution, fully connected. Misalignment, duplication, and reporting noise get cut before they compound.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-num">04</div>
+        <div>
+          <div class="method-title">Governance That Enables</div>
+          <p class="method-desc">Decision frameworks designed to accelerate action, clarify ownership, and eliminate escalation cycles. Less overhead. More progress.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-num">05</div>
+        <div>
+          <div class="method-title">Systems That Outlast Us</div>
+          <p class="method-desc">When we leave, your organization continues to deliver. No dependency on us. No regression when the engagement ends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="industries">
+    <p class="section-label">Industries</p>
+    <h2>We've Worked Where<br/>Stakes Are High.</h2>
+    <p class="section-intro">Our experience spans complex, high-visibility organizations where transformation isn't optional and failure isn't acceptable.</p>
+    <div class="industry-tags fade-in">
+      <span class="tag">Enterprise IT</span>
+      <span class="tag">Utilities &amp; Regulated Industries</span>
+      <span class="tag">Hospitality &amp; Amusement</span>
+      <span class="tag">Large-Scale Call Centers</span>
+      <span class="tag">ERP &amp; S/4 Migrations</span>
+      <span class="tag">Digital Transformation</span>
+      <span class="tag">Operating Model Design</span>
+      <span class="tag">Multi-State Operations</span>
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <p class="section-label">Get in Touch</p>
+    <h2>If Your Transformation Isn't Delivering,<br/>the Problem Is the System.</h2>
+    <p>Let's have a direct conversation about what's actually happening and whether we're the right fit to fix it.</p>
+    <a href="mailto:kevin.mccoy@xformationpartners.com" class="btn-primary">Schedule a Conversation</a>
+  </section>
+
+
+  <footer>
+    &copy; 2025 Transformation Partners, LLC &nbsp;&middot;&nbsp; xformationpartners.com &nbsp;&middot;&nbsp; All Rights Reserved
+  </footer>
+
+  <script>
+    var els = document.querySelectorAll('.fade-in');
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(function(el) { obs.observe(el); });
+  </script>
+
+</body>
+</html>

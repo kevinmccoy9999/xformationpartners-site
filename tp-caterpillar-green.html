@@ -11,25 +11,25 @@
     html { scroll-behavior: smooth; }
     body { background: #F2F4F0; color: #1C2E3A; font-family: "DM Sans", sans-serif; font-size: 17px; line-height: 1.7; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5vw; background: rgba(26,40,50,0.97); backdrop-filter: blur(8px); }
-    .nav-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
-    .nav-x { font-family: "Bebas Neue", sans-serif; font-size: 2rem; color: #2E9E52; letter-spacing: -0.02em; line-height: 1; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 0.7rem 5vw; background: rgba(26,40,50,0.97); backdrop-filter: blur(8px); }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 44px; width: auto; display: block; }
     .nav-wordmark { font-family: "Bebas Neue", sans-serif; font-size: 1rem; letter-spacing: 0.1em; color: #FFFFFF; line-height: 1.15; white-space: nowrap; }
-    .nav-wordmark span { display: block; color: #2E9E52; font-size: 0.6rem; letter-spacing: 0.18em; font-family: "DM Sans", sans-serif; font-weight: 500; text-transform: lowercase; }
-    .nav-cta { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #2E9E52; text-decoration: none; border: 1.5px solid #2E9E52; padding: 0.42rem 1.1rem; transition: all 0.2s ease; white-space: nowrap; }
-    .nav-cta:hover { background: #2E9E52; color: #1A2832; }
+    .nav-wordmark span { display: block; color: #6DC234; font-size: 0.6rem; letter-spacing: 0.18em; font-family: "DM Sans", sans-serif; font-weight: 500; text-transform: lowercase; }
+    .nav-cta { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #6DC234; text-decoration: none; border: 1.5px solid #6DC234; padding: 0.42rem 1.1rem; transition: all 0.2s ease; white-space: nowrap; }
+    .nav-cta:hover { background: #6DC234; color: #1A2832; }
 
     #hero { min-height: 100vh; background: #1A2832; display: flex; align-items: center; padding: 7rem 5vw 5rem; position: relative; overflow: hidden; }
-    #hero::before { content: ""; position: absolute; top: 0; right: 0; width: 50vw; height: 100%; background: linear-gradient(160deg, rgba(46,158,82,0.08) 0%, rgba(13,61,107,0.14) 100%); pointer-events: none; }
+    #hero::before { content: ""; position: absolute; top: 0; right: 0; width: 50vw; height: 100%; background: linear-gradient(160deg, rgba(109,194,52,0.08) 0%, rgba(13,61,107,0.14) 100%); pointer-events: none; }
     .hero-inner { max-width: 860px; position: relative; z-index: 2; }
-    .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: #2E9E52; margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.8rem; }
-    .hero-eyebrow::before { content: ""; display: inline-block; width: 32px; height: 2px; background: #2E9E52; }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: #6DC234; margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.8rem; }
+    .hero-eyebrow::before { content: ""; display: inline-block; width: 32px; height: 2px; background: #6DC234; }
     h1 { font-family: "Bebas Neue", sans-serif; font-size: clamp(3.5rem, 8.5vw, 7rem); line-height: 0.93; letter-spacing: 0.02em; color: #FFFFFF; margin-bottom: 2rem; }
-    h1 .accent { color: #2E9E52; }
+    h1 .accent { color: #6DC234; }
     .hero-sub { font-family: "Libre Baskerville", serif; font-style: italic; font-size: clamp(1rem, 1.6vw, 1.2rem); color: rgba(242,244,240,0.92); max-width: 540px; margin-bottom: 2.8rem; line-height: 1.9; }
-    .hero-rule { width: 52px; height: 2px; background: #2E9E52; margin-bottom: 2.8rem; }
-    .btn-primary { display: inline-block; background: #2E9E52; color: #FFFFFF; font-family: "DM Sans", sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2.4rem; transition: all 0.2s ease; }
-    .btn-primary:hover { background: #1B6B34; transform: translateY(-2px); }
+    .hero-rule { width: 52px; height: 2px; background: #6DC234; margin-bottom: 2.8rem; }
+    .btn-primary { display: inline-block; background: #1B6B34; color: #FFFFFF; font-family: "DM Sans", sans-serif; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2.4rem; border: 1px solid rgba(109,194,52,0.4); transition: all 0.25s ease; }
+    .btn-primary:hover { background: #2E9E52; }
 
     section { padding: 6rem 5vw; }
     .section-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.38em; text-transform: uppercase; color: #2E9E52; margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.7rem; }
@@ -39,23 +39,26 @@
 
     #about { background: #FFFFFF; }
     .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: start; max-width: 1080px; }
+    .cocoon-quote { margin: 1.8rem 0; padding: 1.4rem 1.6rem; border-left: 4px solid #6DC234; background: rgba(109,194,52,0.06); font-family: "Libre Baskerville", serif; font-style: italic; font-size: 1rem; color: #1A2832; line-height: 1.85; }
     .about-text p { color: #3A5468; margin-bottom: 1.1rem; font-size: 0.97rem; }
     .about-text strong { color: #1A2832; }
     .stat-col { display: flex; flex-direction: column; gap: 2.2rem; }
     .stat-item { padding-left: 1.3rem; border-left: 3px solid #2E9E52; }
-    .stat-num { font-family: "Bebas Neue", sans-serif; font-size: 2.5rem; line-height: 1; color: #1A2832; }
+    .stat-num { font-family: "Bebas Neue", sans-serif; font-size: 2.5rem; line-height: 1; color: #1B6B34; }
     .stat-label { font-size: 0.8rem; color: #4A6070; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 0.2rem; }
 
     #problem { background: #1A2832; position: relative; overflow: hidden; }
     #problem h2 { color: #FFFFFF; }
-    #problem .section-label { color: #2E9E52; }
-    #problem .section-label::before { background: #2E9E52; }
+    #problem .section-label { color: #6DC234; }
+    #problem .section-label::before { background: #6DC234; }
     .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; max-width: 1080px; margin-top: 3rem; position: relative; z-index: 1; }
-    .problem-card { border: 1px solid rgba(46,158,82,0.2); padding: 1.8rem; background: rgba(255,255,255,0.03); transition: border-color 0.2s ease; }
-    .problem-card:hover { border-color: rgba(46,158,82,0.5); background: rgba(46,158,82,0.05); }
+    .problem-card { border: 1px solid rgba(109,194,52,0.18); padding: 1.8rem; background: rgba(255,255,255,0.03); transition: border-color 0.2s ease; }
+    .problem-card:hover { border-color: rgba(109,194,52,0.45); background: rgba(109,194,52,0.05); }
     .p-bar { width: 36px; height: 3px; background: #2E9E52; margin-bottom: 1.1rem; }
     .problem-card h3 { font-family: "Bebas Neue", sans-serif; font-size: 1.28rem; letter-spacing: 0.05em; color: #FFFFFF; margin-bottom: 0.5rem; }
     .problem-card p { font-size: 0.92rem; color: #8EB0C4; line-height: 1.75; }
+    .problem-card.featured { border-color: rgba(109,194,52,0.4); background: rgba(109,194,52,0.06); }
+    .problem-card.featured h3 { color: #6DC234; }
     .problem-kicker { margin-top: 3rem; font-family: "Libre Baskerville", serif; font-style: italic; font-size: 1.1rem; color: rgba(242,244,240,0.75); max-width: 580px; line-height: 1.9; position: relative; z-index: 1; }
 
     #method { background: #F2F4F0; }
@@ -69,29 +72,31 @@
     #industries { background: #FFFFFF; }
     .industry-tags { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2.5rem; }
     .tag { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1A2832; border: 1.5px solid #1A2832; padding: 0.42rem 1rem; transition: all 0.18s ease; }
-    .tag:hover { background: #1A2832; color: #2E9E52; }
+    .tag:hover { background: #1A2832; color: #6DC234; }
 
     #contact { background: #1A2832; text-align: center; padding: 7rem 5vw; position: relative; overflow: hidden; }
-    #contact::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(46,158,82,0.1) 0%, transparent 65%); pointer-events: none; }
+    #contact::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(109,194,52,0.1) 0%, transparent 65%); pointer-events: none; }
     #contact h2 { color: #FFFFFF; max-width: 680px; margin: 0 auto 1.2rem; }
-    #contact .section-label { color: #2E9E52; justify-content: center; }
-    #contact .section-label::before { background: #2E9E52; }
+    #contact .section-label { color: #6DC234; justify-content: center; }
+    #contact .section-label::before { background: #6DC234; }
     #contact p { color: rgba(242,244,240,0.82); max-width: 500px; margin: 0 auto 2.8rem; font-style: italic; font-family: "Libre Baskerville", serif; }
 
     footer { background: #0E181F; color: rgba(255,255,255,0.28); font-size: 0.78rem; text-align: center; padding: 1.6rem 5vw; letter-spacing: 0.1em; }
 
     @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
     @media (max-width: 600px) {
-      nav { padding: 0.85rem 4vw; }
+      nav { padding: 0.7rem 4vw; }
+      .nav-logo img { height: 36px; }
       .nav-wordmark { font-size: 0.8rem; }
       #hero { padding: 6rem 6vw 4rem; }
       h1 { font-size: 3rem; }
       .hero-sub { font-size: 1rem; color: rgba(242,244,240,0.95); }
       section { padding: 4rem 6vw; }
       h2 { font-size: 2.1rem; color: #1A2832; }
+      .cocoon-quote { font-size: 0.97rem; color: #1A2832; }
       .about-text p { font-size: 1rem; color: #3A5468; }
       .about-text strong { color: #1A2832; }
-      .stat-num { color: #1A2832; }
+      .stat-num { color: #1B6B34; }
       .stat-label { color: #4A6070; }
       .section-intro { font-size: 1rem; color: #3A5468; }
       .problem-card p { color: #8EB0C4; }
@@ -109,7 +114,7 @@
 
   <nav>
     <a href="#hero" class="nav-logo">
-      <div class="nav-x">X</div>
+      <img src="data:image/png;base64,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" alt="Transformation Partners LLC" />
       <div class="nav-wordmark">
         Transformation Partners LLC
         <span>xformationpartners.com</span>
@@ -122,9 +127,9 @@
   <section id="hero">
     <div class="hero-inner">
       <p class="hero-eyebrow">Enterprise Transformation &middot; Since 2004</p>
-      <h1>Strategy Is<br/>Easy.<br/><span class="accent">Execution</span><br/>Is the Job.</h1>
+      <h1>Strategy Is Easy.<br/>The <span class="accent">Struggle</span><br/>Is the Job.</h1>
       <div class="hero-rule"></div>
-      <p class="hero-sub">Most consultants tell you what needs to change. We stay in the room until it actually does.</p>
+      <p class="hero-sub">Most consultants optimize for the stopwatch. We optimize for the outcome.</p>
       <a href="mailto:kevin.mccoy@xformationpartners.com" class="btn-primary">Start the Conversation</a>
     </div>
   </section>
@@ -135,15 +140,17 @@
       <div class="about-text">
         <p class="section-label">Who We Are</p>
         <h2>Two Decades.<br/>No Shortcuts.</h2>
+        <div class="cocoon-quote">
+          "A butterfly helped out of its cocoon never flies. The resistance is what builds the strength. We don't remove the struggle — we manage it so your organization emerges capable of sustained flight."
+        </div>
         <p>Transformation Partners was built on one premise: <strong>real change requires someone who won't be talked out of it.</strong></p>
         <p>Since 2004, we've worked inside organizations that others couldn't move — call centers running thousands of agents across multiple states, amusement park operations at scale, enterprise IT overhauls. We've delivered results in every one of them.</p>
         <p>We've seen every phase of the agile lifecycle. We know where transformations stall and exactly why. And we don't leave until the system works.</p>
-        <p>We're not here to produce a deck. We're here to fix the system.</p>
       </div>
       <div class="stat-col">
         <div class="stat-item">
           <div class="stat-num">20+</div>
-          <div class="stat-label">Years of Agile Transformation</div>
+          <div class="stat-label">Years of Organizational Evolution</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">6,000+</div>
@@ -182,18 +189,18 @@
         <h3>Governance That Slows</h3>
         <p>Approval chains built to protect the process instead of enable the work.</p>
       </div>
+      <div class="problem-card featured">
+        <div class="p-bar"></div>
+        <h3>Skipping the Struggle</h3>
+        <p>Organizations that shortcut the hard work of alignment never build the muscle to sustain change. The cocoon is not a problem to solve — it is the process that makes flight possible.</p>
+      </div>
       <div class="problem-card">
         <div class="p-bar"></div>
         <h3>Vendor Silos</h3>
         <p>Internal teams and external partners operating from different playbooks, duplicating work and compounding friction.</p>
       </div>
-      <div class="problem-card">
-        <div class="p-bar"></div>
-        <h3>False Progress</h3>
-        <p>Activity metrics masking the absence of real change. Busy teams, stalled outcomes.</p>
-      </div>
     </div>
-    <p class="problem-kicker fade-in">High investment. Low return. Real change never quite arrives. We've seen this pattern across every industry we've worked in — and we know exactly how to break it.</p>
+    <p class="problem-kicker fade-in">High investment. Low return. Real change never quite arrives. We have seen this pattern across every industry we have worked in — and we know exactly how to break it.</p>
   </section>
 
 
@@ -244,7 +251,7 @@
   <section id="industries">
     <p class="section-label">Industries</p>
     <h2>We've Worked Where<br/>Stakes Are High.</h2>
-    <p class="section-intro">Our experience spans complex, high-visibility organizations where transformation isn't optional and failure isn't acceptable.</p>
+    <p class="section-intro">Our experience spans complex, high-visibility organizations where transformation is not optional and failure is not acceptable.</p>
     <div class="industry-tags fade-in">
       <span class="tag">Enterprise IT</span>
       <span class="tag">Utilities &amp; Regulated Industries</span>
