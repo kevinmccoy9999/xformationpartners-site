@@ -29,6 +29,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-links a[aria-current="page"]{color:var(--blue);border-bottom-color:var(--blue)}
 .nav-cta{font-family:Inter,sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);text-decoration:none;border:1.5px solid rgba(108,193,246,.55);padding:.5rem 1.15rem;border-radius:3px;white-space:nowrap;transition:background-color .2s,color .2s,border-color .2s}
 .nav-cta:hover{background:var(--blue);color:var(--navy);border-color:var(--blue)}
+.nav-toggle{display:none;background:none;border:1.5px solid rgba(155,123,238,.45);border-radius:3px;padding:.45rem .6rem;cursor:pointer}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--on-dark);margin:4px 0;transition:transform .2s,opacity .2s}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 .btn{display:inline-block;background-image:var(--grad-deep);background-color:#6039C9;color:var(--white);font-family:Inter,sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:1rem 2.3rem;border-radius:3px;border:0;cursor:pointer;box-shadow:0 8px 24px -10px rgba(96,57,201,.9);transition:transform .2s,box-shadow .2s,filter .2s}
 .btn:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(96,57,201,.95)}
@@ -205,7 +210,11 @@ h3.svc-h{font-family:Montserrat,sans-serif;font-weight:700;font-size:1.2rem;colo
   .nav-links{gap:1.1rem;margin-right:.8rem}
 }
 @media (max-width:900px){
-  .nav-links{display:none}
+  .nav-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;margin:0;padding:.4rem 5vw 1rem;background:rgba(10,17,64,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(155,123,238,.25)}
+  .nav-links.open{display:flex}
+  .nav-links a{width:100%;padding:.85rem 0;border-bottom:1px solid rgba(155,123,238,.12)}
+  .nav-links a[aria-current="page"]{border-bottom-color:rgba(155,123,238,.12)}
 }
 @media (max-width:860px){
   .about-grid,.bio-grid,.featured-paper{grid-template-columns:1fr;gap:2.8rem}

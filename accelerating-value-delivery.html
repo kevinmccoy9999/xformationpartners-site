@@ -42,7 +42,10 @@
         <span class="brand-sub">PARTNERS, LLC</span>
       </span>
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="site-menu">
       <a href="tmo.html">TMO Services</a>
       <a href="accelerating-value-delivery.html" aria-current="page">Value Delivery</a>
       <a href="insights.html">Insights</a>
@@ -167,6 +170,17 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    const navToggle = document.querySelector('.nav-toggle'), siteMenu = document.getElementById('site-menu');
+    if (navToggle && siteMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = siteMenu.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open);
+      });
+      siteMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        siteMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
   </script>
 
 </body>
