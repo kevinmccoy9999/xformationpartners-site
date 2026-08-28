@@ -1,312 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transformation Partners, LLC — Enterprise Transformation That Actually Lands</title>
-  <meta name="description" content="Enterprise transformation consultancy since 2004. We don't hand you a deck and leave — we stay until the system works. Agile transformation, operating model design, and execution for utilities, hospitality, and enterprise IT.">
-  <meta name="theme-color" content="#0A1140">
-  <link rel="canonical" href="https://xformationpartners.com/">
-  <meta property="og:site_name" content="Transformation Partners, LLC">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://xformationpartners.com/">
-  <meta property="og:title" content="Strategy Is Easy. Execution Is the Job.">
-  <meta property="og:description" content="Most consultants tell you what needs to change. We stay in the room until it actually does. Enterprise transformation since 2004.">
-  <meta property="og:image" content="https://xformationpartners.com/assets/og-image.jpg">
-  <meta property="og:image:alt" content="Transformation Partners, LLC — Strategy, Alignment, Execution, Outcomes">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Strategy Is Easy. Execution Is the Job.">
-  <meta name="twitter:description" content="Most consultants tell you what needs to change. We stay in the room until it actually does.">
-  <meta name="twitter:image" content="https://xformationpartners.com/assets/og-image.jpg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:title" content="Transformation Partners, LLC | One System. Three Levels of Impact.">
+<meta property="og:image" content="https://xformationpartners.com/assets/og-image.jpg">
+<title>Transformation Partners, LLC | Transformation Consulting &amp; Value Realization</title>
+<style>
+  :root {
+    --navy: #2B3A67;
+    --navy-dark: #1E2A4D;
+    --purple: #7B2D8E;
+    --purple-light: #F4EDF7;
+    --blue: #2563EB;
+    --teal: #0F6E56;
+    --coral: #993C1D;
+    --ink: #2E2E38;
+    --muted: #5F6470;
+    --line: #E4E2EC;
+    --bg-soft: #F7F6FA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: var(--ink); line-height: 1.6; background: #fff; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { color: var(--navy); line-height: 1.25; }
+
+  header { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: #fff; z-index: 10; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand img { height: 44px; }
+  .brand span { font-weight: 700; font-size: 17px; color: var(--navy); }
+  nav a { color: var(--muted); text-decoration: none; font-size: 14px; margin-left: 22px; }
+  nav a:hover { color: var(--purple); }
+  nav a.cta { background: var(--purple); color: #fff; padding: 9px 18px; border-radius: 6px; font-weight: 600; }
+  nav a.cta:hover { background: #692578; color: #fff; }
+
+  .hero { text-align: center; padding: 72px 0 56px; }
+  .hero .kicker { color: var(--purple); font-weight: 700; letter-spacing: 1.5px; font-size: 13px; text-transform: uppercase; }
+  .hero h1 { font-size: 44px; margin: 14px 0 16px; }
+  .hero p.lead { font-size: 19px; color: var(--muted); max-width: 640px; margin: 0 auto 28px; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 6px; }
+  .btn-primary { background: var(--purple); color: #fff; }
+  .btn-primary:hover { background: #692578; }
+  .btn-ghost { color: var(--purple); border: 1.5px solid var(--purple); margin-left: 12px; }
+  .btn-ghost:hover { background: var(--purple-light); }
+
+  .section { padding: 56px 0; }
+  .section.alt { background: var(--bg-soft); }
+  .section-head { text-align: center; max-width: 680px; margin: 0 auto 36px; }
+  .section-head .kicker { color: var(--purple); font-weight: 700; letter-spacing: 1.5px; font-size: 12px; text-transform: uppercase; }
+  .section-head h2 { font-size: 30px; margin: 10px 0 12px; }
+  .section-head p { color: var(--muted); font-size: 16px; }
+
+  .cards-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .svc { border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 0 0 10px 10px; padding: 26px 24px; background: #fff; }
+  .svc.tmo { border-top-color: var(--navy); }
+  .svc.product { border-top-color: var(--purple); }
+  .svc.program { border-top-color: var(--blue); }
+  .svc .level { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .svc h3 { font-size: 21px; margin: 8px 0 4px; }
+  .svc .tag { font-style: italic; color: var(--purple); font-size: 14px; margin-bottom: 12px; }
+  .svc p { font-size: 14.5px; color: var(--ink); margin-bottom: 14px; }
+  .svc .meta { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .svc .meta strong { color: var(--navy); }
+  .svc a.more { color: var(--purple); font-weight: 600; font-size: 14px; text-decoration: none; }
+  .svc a.more:hover { text-decoration: underline; }
+
+  .pillbox { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .pill { background: var(--purple-light); color: var(--purple); font-weight: 600; font-size: 13.5px; padding: 8px 16px; border-radius: 20px; }
+
+  .cards-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .mode { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 22px 20px; }
+  .mode .num { display: inline-block; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 14px; font-weight: 700; text-align: center; line-height: 28px; margin-bottom: 10px; }
+  .mode h3 { font-size: 17px; margin-bottom: 6px; }
+  .mode p { font-size: 13.5px; color: var(--muted); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 18px; text-align: center; }
+  .stat .n { font-size: 38px; font-weight: 700; color: var(--purple); }
+  .stat .l { font-size: 12.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+
+  .closing { background: var(--navy-dark); text-align: center; padding: 64px 0; }
+  .closing h2 { color: #fff; font-size: 30px; margin-bottom: 10px; }
+  .closing p { color: #C9CBE3; font-size: 16px; max-width: 560px; margin: 0 auto 26px; }
+  .closing .btn { background: #fff; color: var(--navy-dark); }
+  .closing .btn:hover { background: var(--purple-light); }
+
+  footer { padding: 26px 0; border-top: 1px solid var(--line); }
+  .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 13px; color: var(--muted); }
+  .foot a { color: var(--purple); text-decoration: none; }
+
+  @media (max-width: 720px) {
+    .hero h1 { font-size: 32px; }
+    nav a:not(.cta) { display: none; }
+  }
+</style>
 </head>
 <body>
 
-  <a href="#main" class="skip-link">Skip to content</a>
-
-  <!-- Reusable brand wave motif -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <defs>
-      <path id="tp-wave" d="M0,110 C220,52 430,150 700,124 C960,99 1180,26 1440,58"></path>
-      <linearGradient id="tp-wave-grad" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#D96FD0"></stop>
-        <stop offset="50%" stop-color="#9B7BEE"></stop>
-        <stop offset="100%" stop-color="#6CC1F6"></stop>
-      </linearGradient>
-    </defs>
-  </svg>
-
-  <nav>
-    <a href="index.html" class="brand" aria-label="Transformation Partners, LLC — home">
-      <img src="assets/phoenix.png" alt="" class="brand-mark" width="460" height="336">
-      <span>
-        <span class="brand-name">TRANSFORMATION</span>
-        <span class="brand-sub">PARTNERS, LLC</span>
-      </span>
-    </a>
-    <div class="nav-links">
-      <a href="tmo.html">TMO Services</a>
-      <a href="accelerating-value-delivery.html">Value Delivery</a>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="assets/phoenix.png" alt="Transformation Partners, LLC">
+      <span>Transformation Partners</span>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#engage">How We Engage</a>
       <a href="insights.html">Insights</a>
       <a href="about.html">About</a>
-      <a href="#contact">Contact</a>
+      <a class="cta" href="#contact">Schedule a Conversation</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div class="kicker">Transformation Consulting &amp; Value Realization</div>
+  <h1>One System. Three Levels of Impact.</h1>
+  <p class="lead">Transformation fails in the space between strategy and delivery. We close that gap at every altitude: orchestrating enterprise transformation, rebuilding how organizations create products, and leading the programs that matter most.</p>
+  <a class="btn btn-primary" href="#contact">Schedule a Conversation</a>
+  <a class="btn btn-ghost" href="#services">Start with an Assessment</a>
+</section>
+
+<section id="services" class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Where does it hurt most?</div>
+      <h2>Three Levels. One Front Door: a Three-Week Assessment.</h2>
+      <p>Engage at any level. Each service delivers standalone value, and each runs on the same integrated system of delivery.</p>
     </div>
-    <a href="#contact" class="nav-cta">Let's Talk</a>
-  </nav>
-
-  <main id="main">
-
-  <section id="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <img src="assets/phoenix.png" alt="" class="hero-phoenix" aria-hidden="true">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">Enterprise Transformation · Since 2004</p>
-        <h1>Strategy Is Easy.<br><span class="accent">Execution</span> Is the Job.</h1>
-        <div class="hero-rule"></div>
-        <p class="hero-sub">Most consultants tell you what needs to change. We stay in the room until it actually does.</p>
-        <a href="#contact" class="btn">Start the Conversation</a>
-        <p class="hero-tagline">
-          <span>Strategy</span><span class="dot" aria-hidden="true"></span>
-          <span>Alignment</span><span class="dot" aria-hidden="true"></span>
-          <span>Execution</span><span class="dot" aria-hidden="true"></span>
-          <span>Outcomes</span>
-        </p>
+    <div class="cards-3">
+      <div class="svc tmo">
+        <div class="level">Enterprise</div>
+        <h3>Transform the Enterprise</h3>
+        <div class="tag">TMO Services</div>
+        <p>We design, stand up, and lead Transformation Management Offices that give executives a single point of orchestration: one vision, one roadmap, one governance model, and one view of value realized.</p>
+        <div class="meta"><strong>For:</strong> CEOs, CIOs, and transformation executives</div>
+        <div class="meta"><strong>Entry point:</strong> TMO design assessment</div>
+        <p style="margin-top:12px;"><a class="more" href="tmo.html">Explore TMO Services &rarr;</a></p>
+      </div>
+      <div class="svc product">
+        <div class="level">Product Organization</div>
+        <h3>Transform How You Build</h3>
+        <div class="tag">Product Transformation</div>
+        <p>We install a product operating model that connects strategy to every epic, feature, and story: objective prioritization, readiness and done criteria at every level, real customer evidence, and outcome measurement.</p>
+        <div class="meta"><strong>For:</strong> CPOs, CIOs, and business unit leaders</div>
+        <div class="meta"><strong>Entry point:</strong> Fixed-fee readiness assessment</div>
+        <p style="margin-top:12px;"><a class="more" href="accelerating-value-delivery.html">Explore Product Transformation &rarr;</a></p>
+      </div>
+      <div class="svc program">
+        <div class="level">Program</div>
+        <h3>Deliver What Matters Most</h3>
+        <div class="tag">Program Management</div>
+        <p>Outcome-accountable leadership for high-stakes programs. Not staff augmentation: value traced to strategy, work gated by readiness, roadblocks resolved in days, and progress measured in outcomes delivered.</p>
+        <div class="meta"><strong>For:</strong> Executives sponsoring critical programs</div>
+        <div class="meta"><strong>Entry point:</strong> Program health check</div>
+        <p style="margin-top:12px;"><a class="more" href="#contact">Explore Program Management &rarr;</a></p>
       </div>
     </div>
-    <svg class="wave" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true" focusable="false" style="height:190px">
-      <g fill="none" stroke="url(#tp-wave-grad)" stroke-width="1" opacity="0.5">
-        <use href="#tp-wave" y="0"></use><use href="#tp-wave" y="4"></use><use href="#tp-wave" y="8"></use>
-        <use href="#tp-wave" y="12"></use><use href="#tp-wave" y="16"></use><use href="#tp-wave" y="20"></use>
-        <use href="#tp-wave" y="24"></use><use href="#tp-wave" y="28"></use><use href="#tp-wave" y="32"></use>
-        <use href="#tp-wave" y="36"></use><use href="#tp-wave" y="40"></use><use href="#tp-wave" y="44"></use>
-        <use href="#tp-wave" y="48"></use><use href="#tp-wave" y="52"></use><use href="#tp-wave" y="56"></use>
-        <use href="#tp-wave" y="60"></use><use href="#tp-wave" y="64"></use><use href="#tp-wave" y="68"></use>
-        <use href="#tp-wave" y="72"></use><use href="#tp-wave" y="76"></use>
-      </g>
-    </svg>
-  </section>
+  </div>
+</section>
 
-  <section id="about">
-    <div class="wrap about-grid reveal">
-      <div class="about-text">
-        <p class="label">Who We Are</p>
-        <h2>Two Decades. No Shortcuts.</h2>
-        <p>Transformation Partners was built on one premise: <strong>real change requires someone who won't be talked out of it.</strong></p>
-        <p>Since 2004, we've worked inside organizations that others couldn't move — call centers running thousands of agents across multiple states, amusement park operations at scale, enterprise IT overhauls. We've delivered results in every one of them.</p>
-        <p>We've seen every phase of the agile lifecycle. We know where transformations stall and exactly why. And we don't leave until the system works.</p>
-        <p>We're not here to produce a deck. We're here to fix the system.</p>
+<section id="system" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">The shared spine</div>
+      <h2>Everything Runs on One Operating System</h2>
+      <p>Value traced from strategy to story. Work gated by explicit readiness and done criteria. Decision-focused governance. Outcomes measured with evidence, not activity.</p>
+    </div>
+    <div class="pillbox">
+      <span class="pill">Strategy-Driven Value</span>
+      <span class="pill">Ready &amp; Done, Defined</span>
+      <span class="pill">Objective Prioritization</span>
+      <span class="pill">Governance That Decides</span>
+      <span class="pill">Evidence Over Activity</span>
+    </div>
+  </div>
+</section>
+
+<section id="engage" class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Flexible by design</div>
+      <h2>How We Engage</h2>
+      <p>Four modes, applied at any level of our practice. Consultants are temporary by design; so is every mode we offer.</p>
+    </div>
+    <div class="cards-4">
+      <div class="mode">
+        <div class="num">1</div>
+        <h3>Consulting Engagements</h3>
+        <p>Scoped, fixed-deliverable work: readiness assessments, operating model and governance design, workshop delivery, and transformation pilots, priced and delivered as projects.</p>
       </div>
-      <div class="stat-col">
-        <div class="stat-item">
-          <div class="stat-num">20+</div>
-          <div class="stat-label">Years of Agile Transformation</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">6,000+</div>
-          <div class="stat-label">Agent Call Center Overhaul · 3 States</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">Multi-Industry</div>
-          <div class="stat-label">Utilities · Hospitality · Enterprise IT · Ops</div>
-        </div>
+      <div class="mode">
+        <div class="num">2</div>
+        <h3>Critical Intervention</h3>
+        <p>Rapid diagnostic, recovery plan, executive alignment, and transition to a sustainable internal owner.</p>
+      </div>
+      <div class="mode">
+        <div class="num">3</div>
+        <h3>Interim Executive</h3>
+        <p>Chief Transformation Officer, transformation lead, EPMO/TMO leader, or executive chief of staff.</p>
+      </div>
+      <div class="mode">
+        <div class="num">4</div>
+        <h3>Fractional Leadership</h3>
+        <p>Ongoing executive capacity for portfolio direction, governance, operating cadence, and value realization.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="problem">
-    <div class="wrap">
-      <p class="label">The Real Problem</p>
-      <h2>Transformations Don't Fail.<br>Organizations Do.</h2>
-      <div class="problem-grid reveal">
-        <div class="problem-card">
-          <div class="p-bar"></div>
-          <h3>Roadmaps vs. Reality</h3>
-          <p>Plans built on aspiration, not actual team capacity or organizational constraints.</p>
-        </div>
-        <div class="problem-card">
-          <div class="p-bar"></div>
-          <h3>Misaligned Priorities</h3>
-          <p>Business and technology pulling in opposite directions with no one accountable for the gap.</p>
-        </div>
-        <div class="problem-card">
-          <div class="p-bar"></div>
-          <h3>Execution Breakdown</h3>
-          <p>Work stalls between strategy, product, and delivery. Nobody owns the space between.</p>
-        </div>
-        <div class="problem-card">
-          <div class="p-bar"></div>
-          <h3>Governance That Slows</h3>
-          <p>Approval chains built to protect the process instead of enable the work.</p>
-        </div>
-        <div class="problem-card">
-          <div class="p-bar"></div>
-          <h3>Vendor Silos</h3>
-          <p>Internal teams and external partners operating from different playbooks, duplicating work and compounding friction.</p>
-        </div>
-        <div class="problem-card">
-          <div class="p-bar"></div>
-          <h3>False Progress</h3>
-          <p>Activity metrics masking the absence of real change. Busy teams, stalled outcomes.</p>
-        </div>
-      </div>
-      <p class="kicker reveal">High investment. Low return. Real change never quite arrives. <em>We've seen this pattern across every industry we've worked in — and we know exactly how to break it.</em></p>
-      <div class="paper-teaser reveal">
-        <img src="assets/wtf-preview.png" alt="Cover of the Why Transformations Fail white paper" loading="lazy">
-        <div>
-          <p class="paper-eyebrow">White Paper</p>
-          <h3>Why Transformations Fail</h3>
-          <p>A system-level perspective on unlocking sustainable business outcomes: the failure pattern, ten signals of breakdown, and the structural shifts that fix them.</p>
-          <a href="assets/why-transformations-fail-whitepaper.pdf" class="btn">Read the White Paper</a>
-        </div>
-      </div>
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Proven at scale</div>
+      <h2>Experience That Has Operated, Not Just Advised</h2>
+      <p>Built from operating experience inside real transformations at Slalom, Marriott, Disney, and PepsiCo, across programs up to $3B and product portfolios up to $7B.</p>
     </div>
-    <svg class="wave" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true" focusable="false" style="height:150px">
-      <g fill="none" stroke="url(#tp-wave-grad)" stroke-width="1" opacity="0.4">
-        <use href="#tp-wave" y="0"></use><use href="#tp-wave" y="5"></use><use href="#tp-wave" y="10"></use>
-        <use href="#tp-wave" y="15"></use><use href="#tp-wave" y="20"></use><use href="#tp-wave" y="25"></use>
-        <use href="#tp-wave" y="30"></use><use href="#tp-wave" y="35"></use><use href="#tp-wave" y="40"></use>
-        <use href="#tp-wave" y="45"></use><use href="#tp-wave" y="50"></use><use href="#tp-wave" y="55"></use>
-        <use href="#tp-wave" y="60"></use><use href="#tp-wave" y="65"></use><use href="#tp-wave" y="70"></use>
-      </g>
-    </svg>
-  </section>
-
-  <section id="method">
-    <div class="wrap">
-      <p class="label">How We Work</p>
-      <h2>Built to Deliver. Not to Recommend.</h2>
-      <p class="intro">Every engagement is grounded in outcomes, not activity. We don't leave until the system works.</p>
-      <div class="method-grid reveal">
-        <div class="method-card">
-          <div class="method-num">01</div>
-          <h3 class="method-title">Outcome-Driven Alignment</h3>
-          <p class="method-desc">We define success in measurable terms upfront — financial impact, operational efficiency, time-to-value — and every decision ties back to those numbers.</p>
-        </div>
-        <div class="method-card">
-          <div class="method-num">02</div>
-          <h3 class="method-title">Capacity-Aware Roadmapping</h3>
-          <p class="method-desc">We build roadmaps against real throughput and real constraints. No aspirational timelines. No plans that only exist in a slide deck.</p>
-        </div>
-        <div class="method-card">
-          <div class="method-num">03</div>
-          <h3 class="method-title">Vertical Integration of Work</h3>
-          <p class="method-desc">Strategy to Product to Execution, fully connected. Misalignment, duplication, and reporting noise get cut before they compound.</p>
-        </div>
-        <div class="method-card">
-          <div class="method-num">04</div>
-          <h3 class="method-title">Governance That Enables</h3>
-          <p class="method-desc">Decision frameworks designed to accelerate action, clarify ownership, and eliminate escalation cycles. Less overhead. More progress.</p>
-        </div>
-        <div class="method-card">
-          <div class="method-num">05</div>
-          <h3 class="method-title">Systems That Outlast Us</h3>
-          <p class="method-desc">When we leave, your organization continues to deliver. No dependency on us. No regression when the engagement ends.</p>
-        </div>
-      </div>
-      <figure class="figure reveal">
-        <img src="assets/tmo-engagement.png" alt="Four-phase engagement model: Assess, Stand Up, Run, Transfer" loading="lazy">
-        <figcaption>Every engagement is designed to make our role temporary</figcaption>
-      </figure>
+    <div class="stats">
+      <div class="stat"><div class="n">20+</div><div class="l">Years</div></div>
+      <div class="stat"><div class="n">$3B</div><div class="l">Program Scale</div></div>
+      <div class="stat"><div class="n">$7B</div><div class="l">Product Portfolio</div></div>
+      <div class="stat"><div class="n">179</div><div class="l">Teams Aligned</div></div>
+      <div class="stat"><div class="n">18</div><div class="l">Countries</div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="industries">
-    <div class="wrap">
-      <p class="label">Industries</p>
-      <h2>We've Worked Where Stakes Are High.</h2>
-      <p class="intro">Our experience spans complex, high-visibility organizations where transformation isn't optional and failure isn't acceptable.</p>
-      <div class="tags reveal">
-        <span class="tag">Enterprise IT</span>
-        <span class="tag">Utilities &amp; Regulated Industries</span>
-        <span class="tag">Hospitality &amp; Amusement</span>
-        <span class="tag">Large-Scale Call Centers</span>
-        <span class="tag">ERP &amp; S/4 Migrations</span>
-        <span class="tag">Digital Transformation</span>
-        <span class="tag">Operating Model Design</span>
-        <span class="tag">Multi-State Operations</span>
-      </div>
-    </div>
-  </section>
+<section id="contact" class="closing">
+  <div class="wrap">
+    <h2>Start at the Level Where It Hurts Most</h2>
+    <p>A three-week assessment gives you a fact-based picture and a prioritized path, whether or not you engage us further.</p>
+    <a class="btn" href="mailto:kevin.mccoy@xformationpartners.com">Schedule a Conversation</a>
+  </div>
+</section>
 
-  <section id="contact">
-    <div class="contact-glow" aria-hidden="true"></div>
-    <div class="wrap">
-      <img src="assets/phoenix.png" alt="" class="contact-phoenix" aria-hidden="true">
-      <p class="label">Get in Touch</p>
-      <h2>If Your Transformation Isn't Delivering, the Problem Is the System.</h2>
-      <p class="intro">Let's have a direct conversation about what's actually happening and whether we're the right fit to fix it.</p>
-      <form class="contact-form" action="https://formsubmit.co/kevin.mccoy@xformationpartners.com" method="POST">
-        <input type="hidden" name="_subject" value="Website inquiry — xformationpartners.com">
-        <input type="hidden" name="_next" value="https://xformationpartners.com/#contact">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <div>
-          <label for="cf-name">Name</label>
-          <input id="cf-name" type="text" name="name" placeholder="Your name" required>
-        </div>
-        <div>
-          <label for="cf-email">Email</label>
-          <input id="cf-email" type="email" name="email" placeholder="you@company.com" required>
-        </div>
-        <div class="full">
-          <label for="cf-company">Company</label>
-          <input id="cf-company" type="text" name="company" placeholder="Organization">
-        </div>
-        <div class="full">
-          <label for="cf-message">What's happening with your transformation?</label>
-          <textarea id="cf-message" name="message" placeholder="Tell us where things are stuck." required></textarea>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn">Schedule a Conversation</button>
-        </div>
-      </form>
-      <p class="contact-alt">Prefer email? Reach us directly at <a href="mailto:kevin.mccoy@xformationpartners.com">kevin.mccoy@xformationpartners.com</a></p>
-    </div>
-  </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <a href="index.html" class="brand" aria-label="Transformation Partners, LLC — home">
-        <img src="assets/phoenix.png" alt="" class="brand-mark" width="460" height="336">
-        <span>
-          <span class="brand-name">TRANSFORMATION</span>
-          <span class="brand-sub">PARTNERS, LLC</span>
-        </span>
-      </a>
-      <p class="footer-tagline">
-        <span>Strategy</span><span class="dot" aria-hidden="true"></span>
-        <span>Alignment</span><span class="dot" aria-hidden="true"></span>
-        <span>Execution</span><span class="dot" aria-hidden="true"></span>
-        <span>Outcomes</span>
-      </p>
-      <div class="footer-nav">
-        <a href="tmo.html">TMO Services</a>
-        <a href="accelerating-value-delivery.html">Accelerating Value Delivery</a>
-        <a href="insights.html">Insights</a>
-        <a href="about.html">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <p class="footer-legal">© 2026 Transformation Partners, LLC · <a href="https://xformationpartners.com">xformationpartners.com</a> · <a href="mailto:kevin.mccoy@xformationpartners.com">kevin.mccoy@xformationpartners.com</a> · All Rights Reserved</p>
-    </div>
-  </footer>
-
-  <script>
-    document.documentElement.classList.add('js');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  </script>
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 Transformation Partners, LLC</span>
+    <span><a href="https://xformationpartners.com">xformationpartners.com</a> &nbsp;|&nbsp; <a href="https://linkedin.com/in/kmccoy1">LinkedIn</a> &nbsp;|&nbsp; <a href="mailto:kevin.mccoy@xformationpartners.com">kevin.mccoy@xformationpartners.com</a></span>
+  </div>
+</footer>
 
 </body>
 </html>
