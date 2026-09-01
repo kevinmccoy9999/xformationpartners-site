@@ -37,7 +37,6 @@
     <div class="nav-links" id="site-menu">
       <a href="tmo.html">Transformation Management</a>
       <a href="accelerating-value-delivery.html">Value Delivery</a>
-      <a href="assessments.html">Assessments</a>
       <a href="insights.html" aria-current="page">Insights</a>
       <a href="about.html">About</a>
       <a href="index.html#contact">Contact</a>
@@ -79,18 +78,6 @@
       <p class="label">Library</p>
       <h2>White Papers &amp; Case Studies.</h2>
       <div class="resource-grid reveal">
-        <div class="resource-card">
-          <p class="resource-type">Interactive Tool</p>
-          <h3>Transformation Management Assessment</h3>
-          <p>A free 5-minute self-assessment across the six functions of the Transformation Management Office — from Vision &amp; Strategy to Staff Development. Get your maturity level, a function-by-function profile, and targeted guidance. No email required.</p>
-          <p class="resource-cta"><a href="tmo-assessment.html">Take the Assessment →</a></p>
-        </div>
-        <div class="resource-card">
-          <p class="resource-type">Interactive Tool</p>
-          <h3>Governance Maturity Assessment</h3>
-          <p>A free 10-minute self-assessment across six dimensions of governance that decides — decision rights, alignment, funding, escalation, value realization, and cadence. Get your maturity level and targeted recommendations. No email required.</p>
-          <p class="resource-cta"><a href="governance-maturity-assessment.html">Take the Assessment →</a></p>
-        </div>
         <div class="resource-card">
           <p class="resource-type">Interactive Tool</p>
           <h3>Product Operating Model Assessment</h3>
@@ -149,7 +136,6 @@
       <div class="footer-nav">
         <a href="tmo.html">Transformation Management</a>
         <a href="accelerating-value-delivery.html">Accelerating Value Delivery</a>
-        <a href="assessments.html">Assessments</a>
         <a href="insights.html">Insights</a>
         <a href="about.html">About</a>
         <a href="index.html#contact">Contact</a>

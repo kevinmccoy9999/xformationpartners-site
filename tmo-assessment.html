@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformation Management Assessment — Transformation Partners, LLC</title>
+  <meta name="description" content="A free self-assessment of your transformation management maturity across the six TMO functions: strategy, change, capability, program management, execution services, and staff development.">
+  <meta name="theme-color" content="#0A1140">
+  <link rel="canonical" href="https://xformationpartners.com/tmo-assessment.html">
+  <meta property="og:site_name" content="Transformation Partners, LLC">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xformationpartners.com/tmo-assessment.html">
+  <meta property="og:title" content="How Mature Is Your Transformation Management?">
+  <meta property="og:description" content="A free 5-minute assessment across the six functions of the Transformation Management Office — from Vision &amp; Strategy to Staff Development.">
+  <meta property="og:image" content="https://xformationpartners.com/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Mature Is Your Transformation Management?">
+  <meta name="twitter:description" content="Score your organization across the six TMO functions and get tailored guidance.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .assess-shell{max-width:860px;margin:0 auto}
+    .assess-progress{display:flex;align-items:center;gap:1rem;margin-bottom:2.2rem}
+    .assess-progress-track{flex:1;height:6px;background:rgba(10,17,64,.1);border-radius:3px;overflow:hidden}
+    .assess-progress-fill{height:100%;width:0;background-image:var(--grad-deep);border-radius:3px;transition:width .35s}
+    .assess-progress-label{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--body);white-space:nowrap}
+    .assess-card{background:var(--white);border:1px solid rgba(10,17,64,.1);border-radius:8px;padding:2.4rem 2.2rem;box-shadow:0 14px 30px -22px rgba(10,17,64,.3)}
+    .stepmeta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.5rem}
+    .stepmeta .secnum{font-size:.66rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--body)}
+    .stepmeta .pillar{font-size:.66rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--magenta-ink)}
+    .fn-title{font-family:Montserrat,sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:-.01em;color:var(--ink);margin-bottom:.4rem}
+    .fn-desc{font-size:.95rem;color:var(--body);font-style:italic;margin-bottom:1.8rem}
+    .q{padding:1.4rem 0;border-top:1px solid rgba(10,17,64,.08)}
+    .q:first-of-type{border-top:none;padding-top:.2rem}
+    .q label.qt{display:block;font-size:1.02rem;font-weight:600;color:var(--ink);margin-bottom:.9rem;line-height:1.5}
+    .sliderrow{display:flex;align-items:center;gap:1rem}
+    input[type=range]{flex:1;appearance:none;-webkit-appearance:none;height:6px;border-radius:3px;background:linear-gradient(to right,#9B7BEE 0%,#9B7BEE 50%,rgba(10,17,64,.12) 50%);outline:none;cursor:pointer}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--white);border:3px solid var(--violet-ink);cursor:pointer;box-shadow:0 2px 6px rgba(10,17,64,.3)}
+    input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--white);border:3px solid var(--violet-ink);cursor:pointer}
+    input[type=range]:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+    .val{min-width:2.4em;text-align:center;font-family:Montserrat,sans-serif;font-weight:800;font-size:1.1rem;color:var(--violet-ink);background:linear-gradient(100deg,rgba(168,28,158,.08),rgba(96,57,201,.1),rgba(21,101,192,.08));border:1px solid rgba(91,59,196,.25);border-radius:6px;padding:.25rem .5rem}
+    .anchors{display:flex;justify-content:space-between;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--body);margin-top:.5rem}
+    .assess-nav-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2.2rem}
+    .btn.small{padding:.85rem 1.9rem;font-size:.76rem}
+    .btn-ghost.small{padding:.85rem 1.9rem;font-size:.76rem}
+    .step-hidden{display:none}
+    /* Intro function grid */
+    .fn-groups{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin:2.4rem 0 2.2rem}
+    .fn-group{background:var(--white);border:1px solid rgba(10,17,64,.1);border-radius:8px;padding:1.6rem 1.7rem}
+    .fn-group h4{font-family:Montserrat,sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--magenta-ink);margin-bottom:1rem}
+    .fn-group ul{list-style:none;margin:0;padding:0}
+    .fn-group li{position:relative;padding:.45rem 0 .45rem 1.5rem;font-size:.95rem;color:var(--body);border-bottom:1px solid rgba(10,17,64,.06)}
+    .fn-group li:last-child{border-bottom:0}
+    .fn-group li strong{color:var(--ink)}
+    .fn-group li::before{content:"";position:absolute;left:0;top:1rem;width:.7rem;height:.2rem;background-image:var(--grad-deep);border-radius:2px}
+    @media (max-width:700px){.fn-groups{grid-template-columns:1fr}}
+    /* Results */
+    .result-head{text-align:center;margin-bottom:2.4rem}
+    .result-level{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.02em;color:var(--ink);line-height:1.1}
+    @supports (background-clip:text) or (-webkit-background-clip:text){
+      .result-level{background-image:var(--grad-deep);-webkit-background-clip:text;background-clip:text;color:transparent}
+    }
+    .result-score{font-size:.8rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--body);margin-top:.6rem}
+    .result-desc{max-width:600px;margin:1.2rem auto 0;font-size:1.02rem;color:var(--body)}
+    .radar-wrap{background:var(--navy-card);border:1px solid rgba(155,123,238,.25);border-radius:8px;padding:1.4rem;max-width:520px;margin:0 auto}
+    .radar-wrap figcaption{margin-top:.8rem;font-size:.72rem;color:var(--on-dark);text-transform:uppercase;letter-spacing:.14em;text-align:center}
+    .fnres{border-top:1px solid rgba(10,17,64,.08);padding:1.2rem 0}
+    .fnres:first-of-type{border-top:none}
+    .fnres .rowtop{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.6rem;flex-wrap:wrap}
+    .fnres .name{font-family:Montserrat,sans-serif;font-weight:700;font-size:1.02rem;color:var(--ink)}
+    .fnres .name .pillar-tag{font-family:Inter,sans-serif;font-weight:600;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta-ink);margin-left:.5rem}
+    .fnres .score{font-family:Montserrat,sans-serif;font-weight:800;font-size:.95rem}
+    .bar{height:8px;background:rgba(10,17,64,.1);border-radius:4px;overflow:hidden}
+    .bar span{display:block;height:100%;border-radius:4px;transition:width .8s ease}
+    .fnres .tip{font-size:.93rem;color:var(--body);line-height:1.65;margin-top:.7rem}
+    .result-actions{text-align:center;margin-top:3rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+    @media (max-width:760px){
+      .assess-card{padding:1.8rem 1.4rem}
+      .anchors span:nth-child(2){display:none}
+    }
+    @media print{
+      nav,footer,.assess-nav-row,.result-actions,#assess-cta{display:none!important}
+      .page-hero{padding:2rem 5vw}
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav>
+    <a href="index.html" class="brand" aria-label="Transformation Partners, LLC — home">
+      <img src="assets/phoenix.png" alt="" class="brand-mark" width="460" height="336">
+      <span>
+        <span class="brand-name">TRANSFORMATION</span>
+        <span class="brand-sub">PARTNERS, LLC</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="tmo.html">Transformation Management</a>
+      <a href="accelerating-value-delivery.html">Value Delivery</a>
+      <a href="assessments.html">Assessments</a>
+      <a href="insights.html">Insights</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+  </nav>
+<main id="main">
+
+  <section class="page-hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">Free Self-Assessment · 5 Minutes</p>
+      <h1>How Mature Is Your <span class="accent">Transformation Management?</span></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">Rate your organization against the six functions of a high-performing Transformation Management Office. Takes about 5 minutes. Your answers stay in your browser.</p>
+    </div>
+  </section>
+
+  <section class="svc-section" id="assessment">
+    <div class="wrap assess-shell">
+
+      <!-- Intro step -->
+      <div id="step-intro">
+        <p class="label">The TMO Framework</p>
+        <h2>Six Functions. One Managed System.</h2>
+        <p class="intro" style="max-width:none">Most transformations fail in the space between strategy and delivery. This assessment measures how well your organization runs the six TMO functions: three that set direction (Strategic Leadership) and three that industrialize execution (Leverage at Scale).</p>
+        <div class="fn-groups">
+          <div class="fn-group">
+            <h4>Strategic Leadership</h4>
+            <ul>
+              <li><strong>Vision, Strategy &amp; Operating Models</strong> — one vision, one roadmap, one True North</li>
+              <li><strong>Organizational Change &amp; Communication</strong> — readiness, engagement, and communication as managed disciplines</li>
+              <li><strong>Capability Development</strong> — build what the future state requires</li>
+            </ul>
+          </div>
+          <div class="fn-group">
+            <h4>Leverage at Scale</h4>
+            <ul>
+              <li><strong>Program Management</strong> — orchestration against outcomes, not activity</li>
+              <li><strong>Execution Services</strong> — playbooks, enablement, and metrics that make it repeatable</li>
+              <li><strong>Staff Development</strong> — knowledge, adoption, and continuity that outlast the engagement</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size:.95rem;margin-bottom:2rem">For each statement, move the slider from <strong style="color:var(--ink)">0 &mdash; not at all</strong> to <strong style="color:var(--ink)">10 &mdash; fully institutionalized and measured</strong>. Answer for how your transformation actually runs today, not how the charter says it should.</p>
+        <button class="btn" id="btn-start" type="button" onclick="startAssessment()">Start the Assessment</button>
+      </div>
+
+      <!-- Question steps (rendered by JS) -->
+      <div id="step-questions" class="step-hidden">
+        <div class="assess-progress" aria-hidden="true">
+          <div class="assess-progress-track"><div class="assess-progress-fill" id="pbar"></div></div>
+          <span class="assess-progress-label" id="progress-label">Section 1 of 6</span>
+        </div>
+        <div class="assess-card" id="step" aria-live="polite"></div>
+      </div>
+
+      <!-- Results step -->
+      <div id="results" class="step-hidden">
+        <div class="result-head">
+          <p class="label" style="justify-content:center">Your Results</p>
+          <div class="result-level" id="olevel">Managed</div>
+          <p class="result-score">Overall Maturity: <span id="oscore">0.0</span> / 10</p>
+          <p class="result-desc" id="oleveldesc"></p>
+        </div>
+        <figure class="radar-wrap">
+          <svg id="radar" viewBox="0 0 460 420" role="img" aria-label="Radar chart of function scores" style="width:100%;height:auto;display:block"></svg>
+          <figcaption>Maturity by Function</figcaption>
+        </figure>
+        <div class="rec-list" style="margin-top:3rem">
+          <h3 class="svc-h">Function Scores &amp; Guidance</h3>
+          <p class="fn-desc" style="margin-bottom:.6rem">Listed weakest first: where the operating system needs attention most.</p>
+          <div id="fnresults"></div>
+        </div>
+        <div class="result-actions">
+          <a class="btn small" href="index.html#contact">Discuss Your Results With Us</a>
+          <button class="btn-ghost small" type="button" onclick="window.print()">Print / Save Results</button>
+          <button class="btn-ghost small" type="button" onclick="restart()">Retake</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-band" id="assess-cta">
+    <div class="contact-glow" aria-hidden="true"></div>
+    <div class="wrap" style="position:relative;z-index:1">
+      <h2>Ready to Close the Gaps?</h2>
+      <p>Transformation Partners designs, stands up, and leads TMOs: one vision, one roadmap, one governance model, and one view of value realized. Let's have a direct conversation about your results.</p>
+      <a href="index.html#contact" class="btn">Schedule a Conversation</a>
+    </div>
+  </section>
+
+</main>
+<footer>
+    <div class="footer-inner">
+      <a href="index.html" class="brand" aria-label="Transformation Partners, LLC — home">
+        <img src="assets/phoenix.png" alt="" class="brand-mark" width="460" height="336">
+        <span>
+          <span class="brand-name">TRANSFORMATION</span>
+          <span class="brand-sub">PARTNERS, LLC</span>
+        </span>
+      </a>
+      <p class="footer-tagline">
+        <span>Strategy</span><span class="dot" aria-hidden="true"></span>
+        <span>Alignment</span><span class="dot" aria-hidden="true"></span>
+        <span>Execution</span><span class="dot" aria-hidden="true"></span>
+        <span>Outcomes</span>
+      </p>
+      <div class="footer-nav">
+        <a href="tmo.html">Transformation Management</a>
+        <a href="accelerating-value-delivery.html">Accelerating Value Delivery</a>
+        <a href="assessments.html">Assessments</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <p class="footer-legal">© 2026 Transformation Partners, LLC · <a href="https://xformationpartners.com">xformationpartners.com</a> · <a href="mailto:kevin.mccoy@xformationpartners.com">kevin.mccoy@xformationpartners.com</a> · All Rights Reserved</p>
+    </div>
+  </footer>
+<script>
+document.documentElement.classList.add('js');
+
+const FUNCTIONS = [
+  {
+    name: "Vision, Strategy & Operating Models",
+    pillar: "Strategic Leadership",
+    short: "Vision & Strategy",
+    desc: "Create and maintain the end-state vision and transformation roadmap to maximize the attainment of business value.",
+    questions: [
+      "We have a clearly defined vision, mission, values, and business drivers that align the organization to a “True North.”",
+      "We maintain a living transformation roadmap and enablement plan that guides sequencing and investment.",
+      "Our organizational structure and governance patterns maximize team autonomy and minimize orchestration overhead.",
+      "Business and organizational OKRs are defined, and team structures are aligned around products and services.",
+      "Transformation investment is prioritized with validated readiness, informing portfolio funding and staffing decisions."
+    ],
+    tips: {
+      low: "Start with True North: without a shared vision, roadmap, and OKRs, every downstream function optimizes locally. This is the highest-leverage gap to close first.",
+      mid: "Direction exists but is not yet fully driving decisions. Tighten the link between the roadmap, OKRs, and portfolio funding so priority conflicts resolve themselves.",
+      high: "Strategy is a managed asset. Keep the roadmap and OKRs refreshed as the transformation matures, and use them to pressure-test every new investment."
+    }
+  },
+  {
+    name: "Organizational Change & Communication",
+    pillar: "Strategic Leadership",
+    short: "Change & Comms",
+    desc: "Bring the organization along: readiness, engagement, and communication as managed disciplines.",
+    questions: [
+      "We assess readiness and plan change deliberately: stakeholder analysis, risk and readiness assessment, and a documented change strategy.",
+      "Change impacts are assessed enterprise-wide, with role clarity, structure, and accountabilities defined for the future state.",
+      "Leadership and employee engagement plans exist, and OCM metrics are tracked and measured.",
+      "Communication is a managed discipline: planned campaigns, forums, live events, and consistent transformation branding."
+    ],
+    tips: {
+      low: "Change is outpacing the organization's ability to absorb it. Begin with a stakeholder and readiness assessment, then build a change strategy people can actually see and feel.",
+      mid: "Change management is happening but not yet measured. Add OCM metrics and enterprise-wide impact assessment so engagement is managed, not assumed.",
+      high: "Change and communication are running as disciplines. Sustain momentum with regular engagement measurement and visible leadership sponsorship."
+    }
+  },
+  {
+    name: "Capability Development",
+    pillar: "Strategic Leadership",
+    short: "Capability Dev",
+    desc: "Build the capabilities the strategy requires, where the organization needs them most.",
+    questions: [
+      "We have identified the core, governance, and support capabilities required to deliver our goods and services.",
+      "Capability performance is regularly assessed against our vision, strategy, mission, and goals.",
+      "We actively improve or develop capabilities through targeted consulting, training, and Centers of Excellence."
+    ],
+    tips: {
+      low: "The future state requires capabilities you have not yet mapped. Start with a capability inventory and honest performance baseline against the strategy.",
+      mid: "Capabilities are identified but improvement is ad hoc. Prioritize the gaps that block the roadmap and stand up targeted training or a Center of Excellence.",
+      high: "Capability building is systematic. Keep assessments current as the strategy evolves so investment follows the largest gaps."
+    }
+  },
+  {
+    name: "Program Management",
+    pillar: "Leverage at Scale",
+    short: "Program Mgmt",
+    desc: "Provide orchestration and support for transformation planning, budgeting, and execution.",
+    questions: [
+      "Transformation planning and readiness services reliably carry initiatives from initiation through kickoff.",
+      "Our plans are outcomes-based, not activity-based schedules.",
+      "KPIs and financials are tracked with transparent progress reporting to the executive team.",
+      "Where execution needs reinforcement, targeted transformation consulting or support is deployed quickly."
+    ],
+    tips: {
+      low: "Execution is fragmented. Establish a single orchestration point with outcomes-based plans and honest KPI reporting to the executive team.",
+      mid: "Program mechanics exist but may still track activity over outcomes. Shift reporting to value realized, and tighten risk and dependency management across workstreams.",
+      high: "Orchestration is strong. Guard against drift back to status-report thinking: keep the focus on outcomes and value realization."
+    }
+  },
+  {
+    name: "Execution Services",
+    pillar: "Leverage at Scale",
+    short: "Execution Svcs",
+    desc: "Scalable tools and services that make the transformation repeatable, not personality-dependent.",
+    questions: [
+      "A transformation playbook (tools, templates, and tutorials) institutionalizes how the work gets done.",
+      "Teams are enabled through coach-guided assessments and staff coaching.",
+      "Metrics tooling and dashboards track progress against OKRs and success criteria."
+    ],
+    tips: {
+      low: "Execution currently depends on individual heroics. Capture how the work gets done in a playbook and stand up basic metrics tooling before scaling further.",
+      mid: "Tools exist but adoption is uneven. Pair the playbook with coaching and dashboards so every team executes the same way and sees the same numbers.",
+      high: "Execution is repeatable and instrumented. Keep the playbook living: retire what no longer works and fold in what teams learn."
+    }
+  },
+  {
+    name: "Staff Development",
+    pillar: "Leverage at Scale",
+    short: "Staff Dev",
+    desc: "Instill transformation knowledge, adoption, and continuity in the organization.",
+    questions: [
+      "Skill-based training and curriculum are in place, including executive education and managing with metrics.",
+      "Talent pipeline services cover role definitions, recruiting, onboarding, and shadowing for transformation roles.",
+      "Communities of practice sustain learning after individual initiatives or engagements end."
+    ],
+    tips: {
+      low: "Knowledge lives in a few people and will leave with them. Define transformation roles, build a training curriculum, and start at least one community of practice.",
+      mid: "Development is underway but continuity is fragile. Formalize the talent pipeline and give communities of practice real sponsorship and time.",
+      high: "The organization is building self-sustaining capability. Keep investing in executive education and succession for key transformation roles."
+    }
+  }
+];
+
+const LEVELS = [
+  {min:0, name:"Ad Hoc", desc:"Transformation work is largely unmanaged: efforts are fragmented, personality-dependent, and disconnected from strategy. The gap between strategy and delivery is wide open."},
+  {min:2, name:"Emerging", desc:"Pockets of good practice exist, but there is no operating system holding the transformation together. Governance, priorities, and capabilities are inconsistent across the enterprise."},
+  {min:4, name:"Developing", desc:"Core structures are forming: some governance, some planning discipline, some change management. The transformation is still a portfolio of initiatives rather than a managed, measurable system."},
+  {min:6, name:"Managed", desc:"Most TMO functions are operating and measured. One vision, one roadmap, and one governance model are largely in place; the work now is consistency, adoption, and value realization."},
+  {min:8, name:"Optimized", desc:"The transformation runs as one managed system: strategy drives investment, execution is industrialized, and value realized is visible to the executive team. Focus on sustaining and self-funding the capability."}
+];
+
+const BAND_COLORS = {low:"#C62839", mid:"#E07C24", high:"#2E8B4A"};
+
+let answers = FUNCTIONS.map(f => f.questions.map(() => 5));
+let stepIdx = -1;
+const totalSteps = FUNCTIONS.length;
+const $ = id => document.getElementById(id);
+
+function scrollToAssessment(){
+  window.scrollTo({top: document.getElementById("assessment").offsetTop - 80, behavior: "smooth"});
+}
+
+function startAssessment(){ stepIdx = 0; renderStep(); }
+function restart(){
+  answers = FUNCTIONS.map(f => f.questions.map(() => 5));
+  stepIdx = -1;
+  $("results").classList.add("step-hidden");
+  $("step-questions").classList.add("step-hidden");
+  $("step-intro").classList.remove("step-hidden");
+  setProgress(0);
+  scrollToAssessment();
+}
+function setProgress(frac){ $("pbar").style.width = (frac*100)+"%"; }
+
+function sliderBg(el){
+  const pct = (el.value/10)*100;
+  el.style.background = `linear-gradient(to right, #9B7BEE 0%, #9B7BEE ${pct}%, rgba(10,17,64,.12) ${pct}%)`;
+}
+
+function renderStep(){
+  const f = FUNCTIONS[stepIdx];
+  $("step-intro").classList.add("step-hidden");
+  $("results").classList.add("step-hidden");
+  $("step-questions").classList.remove("step-hidden");
+  $("progress-label").textContent = "Section " + (stepIdx+1) + " of " + totalSteps;
+  const step = $("step");
+  let html = `
+    <div class="stepmeta"><span class="secnum">Section ${stepIdx+1} of ${totalSteps}</span><span class="pillar">${f.pillar}</span></div>
+    <h3 class="fn-title">${f.name}</h3>
+    <p class="fn-desc">${f.desc}</p>`;
+  f.questions.forEach((q,i)=>{
+    const v = answers[stepIdx][i];
+    html += `
+    <div class="q">
+      <label class="qt" for="s${i}">${i+1}. ${q}</label>
+      <div class="sliderrow">
+        <input type="range" id="s${i}" min="0" max="10" step="1" value="${v}"
+          oninput="answers[${stepIdx}][${i}]=+this.value; document.getElementById('v${i}').textContent=this.value; sliderBg(this);">
+        <span class="val" id="v${i}">${v}</span>
+      </div>
+      <div class="anchors"><span>0 &mdash; Not at all</span><span>5 &mdash; Partially / inconsistent</span><span>10 &mdash; Fully institutionalized</span></div>
+    </div>`;
+  });
+  html += `
+    <div class="assess-nav-row">
+      <button class="btn-ghost small" type="button" onclick="prevStep()">${stepIdx===0 ? "&larr; Back to Intro" : "&larr; Back"}</button>
+      <button class="btn small" type="button" onclick="nextStep()">${stepIdx===totalSteps-1 ? "See My Results" : "Next Section &rarr;"}</button>
+    </div>`;
+  step.innerHTML = html;
+  step.querySelectorAll("input[type=range]").forEach(sliderBg);
+  setProgress((stepIdx)/(totalSteps));
+  scrollToAssessment();
+}
+
+function prevStep(){
+  if(stepIdx===0){ restart(); return; }
+  stepIdx--; renderStep();
+}
+function nextStep(){
+  if(stepIdx < totalSteps-1){ stepIdx++; renderStep(); }
+  else showResults();
+}
+
+function fnScore(i){
+  const a = answers[i];
+  return a.reduce((s,v)=>s+v,0)/a.length;
+}
+function levelFor(score){
+  let lvl = LEVELS[0];
+  for(const L of LEVELS){ if(score >= L.min) lvl = L; }
+  return lvl;
+}
+function bandFor(score){ return score < 4 ? "low" : score < 7 ? "mid" : "high"; }
+
+function showResults(){
+  $("step-questions").classList.add("step-hidden");
+  $("results").classList.remove("step-hidden");
+  setProgress(1);
+
+  const scores = FUNCTIONS.map((_,i)=>fnScore(i));
+  const overall = scores.reduce((s,v)=>s+v,0)/scores.length;
+  const lvl = levelFor(overall);
+
+  $("oscore").textContent = overall.toFixed(1);
+  $("olevel").textContent = lvl.name;
+  $("oleveldesc").textContent = lvl.desc;
+
+  drawRadar(scores);
+
+  // Per-function results, weakest first
+  const order = scores.map((s,i)=>({s,i})).sort((a,b)=>a.s-b.s);
+  let html = "";
+  order.forEach(({s,i})=>{
+    const f = FUNCTIONS[i];
+    const band = bandFor(s);
+    const color = BAND_COLORS[band];
+    html += `
+    <div class="fnres">
+      <div class="rowtop">
+        <span class="name">${f.name}<span class="pillar-tag">${f.pillar}</span></span>
+        <span class="score" style="color:${color}">${s.toFixed(1)} / 10</span>
+      </div>
+      <div class="bar"><span style="width:${s*10}%;background:${color}"></span></div>
+      <p class="tip">${f.tips[band]}</p>
+    </div>`;
+  });
+  $("fnresults").innerHTML = html;
+  scrollToAssessment();
+}
+
+function drawRadar(scores){
+  const svg = $("radar");
+  const cx=230, cy=205, R=140, n=scores.length;
+  const angle = i => (Math.PI*2*i/n) - Math.PI/2;
+  const pt = (i, r) => [cx + Math.cos(angle(i))*r, cy + Math.sin(angle(i))*r];
+  let s = `<defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#D96FD0"/><stop offset=".5" stop-color="#9B7BEE"/><stop offset="1" stop-color="#6CC1F6"/></linearGradient></defs>`;
+
+  // grid rings
+  for(let ring=1; ring<=5; ring++){
+    const r = R*ring/5;
+    const pts = Array.from({length:n},(_,i)=>pt(i,r).map(v=>v.toFixed(1)).join(",")).join(" ");
+    s += `<polygon points="${pts}" fill="none" stroke="rgba(155,123,238,.28)" stroke-width="1"/>`;
+  }
+  // spokes + labels
+  for(let i=0;i<n;i++){
+    const [x,y] = pt(i,R);
+    s += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="rgba(155,123,238,.28)" stroke-width="1"/>`;
+    const [lx,ly] = pt(i,R+28);
+    const anchor = Math.abs(lx-cx)<10 ? "middle" : (lx>cx ? "start" : "end");
+    s += `<text x="${lx.toFixed(1)}" y="${(ly+4).toFixed(1)}" text-anchor="${anchor}" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#C3C9E8">${FUNCTIONS[i].short}</text>`;
+    const [sx,sy] = pt(i,R+13);
+    s += `<text x="${sx.toFixed(1)}" y="${(sy+4).toFixed(1)}" text-anchor="${anchor}" font-family="Inter,sans-serif" font-size="11" fill="#8b93bd">${scores[i].toFixed(1)}</text>`;
+  }
+  // data polygon
+  const dpts = scores.map((v,i)=>pt(i, R*v/10).map(c=>c.toFixed(1)).join(",")).join(" ");
+  s += `<polygon points="${dpts}" fill="rgba(155,123,238,.3)" stroke="url(#rg)" stroke-width="2.5" stroke-linejoin="round"/>`;
+  scores.forEach((v,i)=>{
+    const [x,y] = pt(i, R*v/10);
+    s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="#6CC1F6"/>`;
+  });
+  svg.innerHTML = s;
+}
+
+/* ---------- Site nav (shared) ---------- */
+const navToggle = document.querySelector('.nav-toggle'), siteMenu = document.getElementById('site-menu');
+if (navToggle && siteMenu) {
+  navToggle.addEventListener('click', () => {
+    const open = siteMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  siteMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    siteMenu.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+}
+</script>
+</body>
+</html>
