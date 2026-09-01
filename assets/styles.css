@@ -144,9 +144,9 @@ h2{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(1.9rem,3.4v
 .contact-form{max-width:640px;margin:0 auto;text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 .contact-form .full{grid-column:1 / -1}
 .contact-form label{display:block;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:.45rem}
-.contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(155,123,238,.35);border-radius:4px;color:var(--white);font-family:inherit;font-size:.95rem;padding:.8rem 1rem;transition:border-color .2s,background-color .2s}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(155,123,238,.35);border-radius:4px;color:var(--white);font-family:inherit;font-size:.95rem;padding:.8rem 1rem;transition:border-color .2s,background-color .2s}
 .contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted-dark)}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--blue);background:rgba(255,255,255,.09)}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--blue);background:rgba(255,255,255,.09)}
 .contact-form textarea{min-height:140px;resize:vertical}
 .contact-form .form-actions{grid-column:1 / -1;text-align:center;margin-top:.6rem}
 .contact-alt{margin-top:1.6rem;font-size:.85rem;color:var(--muted-dark)}
@@ -243,3 +243,6 @@ h3.svc-h{font-family:Montserrat,sans-serif;font-weight:700;font-size:1.2rem;colo
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .btn:hover,.problem-card:hover,.method-card:hover,.resource-card:hover{transform:none}
 }
+
+.contact-form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 stroke=%27%239B7BEE%27 stroke-width=%272%27 fill=%27none%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.contact-form select option{color:var(--ink);background:var(--white)}
