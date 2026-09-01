@@ -113,6 +113,13 @@
     .rec-card .rec-score{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta-ink);margin-bottom:.5rem}
     .rec-card p{font-size:.93rem;color:var(--body);line-height:1.65}
     .result-actions{text-align:center;margin-top:3rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+    /* Soft gate */
+    .gate-card{background:var(--navy-card);border:1px solid rgba(155,123,238,.25);border-radius:8px;padding:2.2rem 2rem;margin-top:3rem;text-align:center}
+    .gate-card h3{font-family:Montserrat,sans-serif;font-weight:800;font-size:1.3rem;color:var(--white);margin-bottom:.6rem}
+    .gate-card > p{color:var(--on-dark);max-width:560px;margin:0 auto 1.6rem;font-size:.95rem}
+    .gate-note{grid-column:1 / -1;margin-top:.4rem;font-size:.78rem;color:var(--muted-dark)}
+    .gate-banner{display:none;background:linear-gradient(100deg,rgba(168,28,158,.08),rgba(96,57,201,.1),rgba(21,101,192,.08));border:1px solid rgba(91,59,196,.3);border-radius:8px;padding:1rem 1.4rem;margin-bottom:2rem;font-weight:600;color:var(--ink)}
+    .gate-banner.show{display:block}
     @media (max-width:760px){
       .result-grid2{grid-template-columns:1fr}
       .assess-card{padding:1.8rem 1.4rem}
@@ -163,6 +170,8 @@
 
   <section class="svc-section" id="assessment">
     <div class="wrap assess-shell">
+
+      <div class="gate-banner" id="gate-banner" role="status">Thanks &mdash; your report request is in. We'll follow up personally, usually within one business day.</div>
 
       <!-- Intro step -->
       <div id="step-intro">
@@ -318,6 +327,36 @@
         <div class="rec-list" id="rec-list">
           <h3 class="svc-h">Where to Focus First</h3>
           <div id="rec-cards"></div>
+        </div>
+        <div class="gate-card">
+          <h3>Get Your Full Report</h3>
+          <p>Your results above aren't going anywhere. If you'd like a personalized read-out &mdash; what your scores mean, how they compare, and the first moves we'd recommend &mdash; send them over and we'll reply personally.</p>
+          <form class="contact-form" action="https://formsubmit.co/kevin.mccoy@xformationpartners.com" method="POST">
+            <input type="hidden" name="_subject" value="Product Operating Model Assessment report request — xformationpartners.com">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://xformationpartners.com/product-operating-model-assessment.html?report=sent#assessment">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="assessment" value="Product Operating Model">
+            <input type="hidden" name="overall_score" id="gate-overall">
+            <input type="hidden" name="maturity_level" id="gate-level">
+            <input type="hidden" name="detail_scores" id="gate-detail">
+            <div>
+              <label for="gf-name">Name</label>
+              <input id="gf-name" type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div>
+              <label for="gf-email">Email</label>
+              <input id="gf-email" type="email" name="email" placeholder="you@company.com" required>
+            </div>
+            <div class="full">
+              <label for="gf-company">Company</label>
+              <input id="gf-company" type="text" name="company" placeholder="Organization (optional)">
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn">Send Me the Full Report</button>
+            </div>
+            <p class="gate-note">Your scores are included automatically. No newsletter, no spam &mdash; just a personal follow-up.</p>
+          </form>
         </div>
         <div class="result-actions">
           <a class="btn small" href="index.html#contact">Discuss Your Results With Us</a>
@@ -552,6 +591,11 @@ function showResults(){
   $("result-level").textContent = lv.name;
   $("result-score").textContent = "Overall Maturity: " + overall.toFixed(1) + " / 5.0";
   $("result-desc").textContent = lv.desc;
+
+  // Soft gate: include scores in the report request
+  $("gate-overall").value = overall.toFixed(1) + " / 5.0";
+  $("gate-level").value = lv.name;
+  $("gate-detail").value = LAYERS.map((l,i)=>l.name + ": " + scores[i].toFixed(1)).join(" | ");
   renderRadar(scores);
   // bars
   let bars = "";
@@ -633,6 +677,11 @@ $("btn-retake").addEventListener("click", () => {
   }
   ring.innerHTML = svg;
 })();
+
+/* ---------- Soft gate confirmation ---------- */
+if (new URLSearchParams(window.location.search).has("report")) {
+  $("gate-banner").classList.add("show");
+}
 
 /* ---------- Site nav (shared) ---------- */
 const navToggle = document.querySelector('.nav-toggle'), siteMenu = document.getElementById('site-menu');
